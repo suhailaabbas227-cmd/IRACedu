@@ -107,7 +107,7 @@ export default function Services() {
       {/* Trust Quote */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-brand-primary mb-8 leading-tight">
+          <h2 className="text-xl md:text-3xl font-bold text-brand-primary mb-8 leading-tight tracking-tight">
             "We work hard to meet our clients' needs by providing academic solutions that adhere to international principles of scholarly excellence."
           </h2>
           <div className="flex flex-col items-center">
@@ -123,14 +123,14 @@ export default function Services() {
       {/* CTA Box */}
       <section className="py-24">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-          <div className="bg-brand-secondary/10 border-2 border-brand-secondary/20 rounded-[40px] p-12 md:p-20 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-primary mb-8">Not Sure Where to Start?</h2>
-            <p className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          <div className="bg-brand-secondary/10 border-2 border-brand-secondary/20 rounded-[30px] md:rounded-[40px] p-8 md:p-20 text-center">
+            <h2 className="text-2xl md:text-5xl font-bold text-brand-primary mb-6 md:mb-8 tracking-tight">Not Sure Where to Start?</h2>
+            <p className="text-slate-600 text-sm md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed">
               Book a free consultation with our PhD consultancy team to discuss your specific research needs.
             </p>
             <button 
               onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-              className="bg-brand-primary text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition-transform"
+              className="bg-brand-primary text-white px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-base md:text-xl shadow-xl hover:scale-105 transition-transform"
             >
               Get Free Consultation
             </button>

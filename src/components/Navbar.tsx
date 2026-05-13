@@ -33,12 +33,9 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0 cursor-pointer">
-            <div className="w-12 h-12 bg-brand-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-2xl italic">I</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-brand-primary leading-none tracking-tighter">IRAC</span>
-              <span className="text-[7px] md:text-[9px] uppercase tracking-[0.2em] text-slate-400 font-bold mt-1">Insight Research & Academic Consultancy</span>
+            <div className="flex flex-col max-w-[180px] md:max-w-none">
+              <span className="text-xl md:text-2xl font-bold text-brand-primary leading-none tracking-tighter">IRAC</span>
+              <span className="text-[7px] md:text-[9px] uppercase tracking-[0.15em] md:tracking-[0.2em] text-slate-400 font-bold mt-1 line-clamp-1 md:line-clamp-none">Insight Research & Academic Consultancy</span>
             </div>
           </Link>
 
@@ -84,11 +81,11 @@ export default function Navbar() {
 
           {/* Contact & Action - Right */}
           <div className="flex items-center gap-3 lg:gap-8 shrink-0">
-            <div className="hidden md:flex items-center gap-2.5 text-slate-700">
-              <div className="w-7 h-7 bg-brand-primary rounded-full flex items-center justify-center">
-                <Phone className="w-3.5 h-3.5 text-white fill-current" />
+            <div className="hidden lg:flex items-center gap-4 border-r border-slate-100 pr-4 mr-2">
+              <div className="w-7 h-7 bg-brand-primary/10 rounded-full flex items-center justify-center">
+                <Phone className="w-3.5 h-3.5 text-brand-primary fill-current" />
               </div>
-              <span className="text-[14px] font-bold">+92 321 9242692</span>
+              <span className="text-[14px] font-bold text-slate-700">+92 321 9242692</span>
             </div>
             
             <button 

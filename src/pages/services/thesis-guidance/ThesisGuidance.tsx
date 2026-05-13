@@ -17,10 +17,10 @@ export default function ThesisGuidance() {
             <GraduationCap className="w-4 h-4" />
             Academic Excellence
           </motion.div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+          <h1 className="text-3xl md:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tight">
             Thesis & Dissertation Guidance
           </h1>
-          <p className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
             Professional mentoring from Ph.D. scholars to help you navigate your research journey from topic selection to final defense.
           </p>
         </div>
@@ -102,13 +102,13 @@ export default function ThesisGuidance() {
       {/* CTA Section */}
       <section className="py-24 bg-brand-primary relative overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to Start Your Research?</h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-12">
+          <h2 className="text-2xl md:text-5xl font-bold text-white mb-6 md:mb-8 tracking-tight">Ready to Start Your Research?</h2>
+          <p className="text-white/70 text-sm md:text-lg max-w-2xl mx-auto mb-8 md:mb-12">
             Connect with our Ph.D. scholars today for a personalized thesis guidance plan.
           </p>
           <button 
             onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-            className="bg-white text-brand-primary px-12 py-5 rounded-full font-bold text-xl hover:bg-white/90 transition-all shadow-2xl"
+            className="bg-white text-brand-primary px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-base md:text-xl hover:bg-white/90 transition-all shadow-2xl"
           >
             Check Availability
           </button>

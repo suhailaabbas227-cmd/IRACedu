@@ -110,7 +110,7 @@ export default function AIAssistant() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="mb-4 w-[350px] md:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden"
+            className="mb-4 w-[calc(100vw-3rem)] sm:w-[350px] md:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-brand-primary p-4 flex items-center justify-between text-white">
@@ -212,9 +212,11 @@ export default function AIAssistant() {
                           ? "bg-brand-primary text-white rounded-tr-none" 
                           : "bg-white text-slate-800 border border-slate-200 rounded-tl-none"
                       )}>
-                        <ReactMarkdown className="prose prose-sm prose-slate max-w-none prose-p:leading-relaxed prose-p:my-1">
-                          {m.content}
-                        </ReactMarkdown>
+                        <div className="prose prose-sm prose-slate max-w-none prose-p:leading-relaxed prose-p:my-1">
+                          <ReactMarkdown>
+                            {m.content}
+                          </ReactMarkdown>
+                        </div>
                       </div>
                     </div>
                   ))}

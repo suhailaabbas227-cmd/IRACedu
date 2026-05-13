@@ -28,7 +28,7 @@ export default function About() {
               International Standard Research Services at Your Doorstep
             </p>
             
-            <h1 className="text-4xl md:text-[64px] font-bold text-white leading-[1.1] mb-10 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold text-white leading-[1.1] mb-6 md:mb-10 tracking-tight">
               IRAC Providing High <br />
               <span className="text-white">Research Quality Standards</span>
             </h1>
@@ -37,7 +37,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base md:text-lg text-white/90 mb-10 max-w-5xl leading-relaxed font-bold"
+              className="text-sm md:text-lg text-white/90 mb-8 md:text-xl md:mb-10 max-w-5xl leading-relaxed font-bold"
             >
               Insight Research & Academic Consultancy (IRAC) is committed to being a dependable solution partner for researchers worldwide. We follow procedures that adhere to international principles of academic publication and scientific documentation.
             </motion.p>

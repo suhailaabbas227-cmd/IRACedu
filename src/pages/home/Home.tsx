@@ -88,7 +88,7 @@ export default function Home() {
               International Standard Research Services
             </p>
             
-            <h1 className="text-4xl md:text-[64px] font-bold text-white leading-[1.1] mb-10 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold text-white leading-[1.1] mb-6 md:mb-10 tracking-tight">
               International Standard Work — <br />
               <span className="text-white">At Your Doorstep</span>
             </h1>
@@ -97,7 +97,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base md:text-lg text-white/90 mb-10 max-w-3xl leading-relaxed font-bold"
+              className="text-sm md:text-lg text-white/90 mb-8 md:text-xl md:mb-10 max-w-3xl leading-relaxed font-bold"
             >
               Insight Research & Academic Consultancy (IRAC) provides end-to-end support for researchers, students, and professionals. Our expert PhD scholars help you navigate your academic journey with excellence.
             </motion.p>
@@ -153,11 +153,11 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="flex flex-col justify-center py-8"
             >
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <h2 className="text-2xl md:text-3xl font-bold text-brand-primary leading-tight tracking-tight">
                   Insight Research & Academic Consultancy (IRAC)
                 </h2>
-                <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+                <p className="text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed">
                   Led by Engr. Muhammad Ali Shaikh and a team of professional Ph.D. Scholars, we ensure your research is of international standard.
                 </p>
                 <div className="pt-2">
@@ -265,7 +265,7 @@ export default function Home() {
               className="flex flex-col justify-center py-8"
             >
               <div className="space-y-6">
-                <div className="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed">
+                  <div className="space-y-4 md:space-y-6 text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed">
                   <p>
                     At IRAC Services, we believe that academic excellence is reachable with the right guidance. Our team of Ph.D. scholars provides specialized consultancy for thesis guidance, proposal development, and complex data analysis.
                   </p>
