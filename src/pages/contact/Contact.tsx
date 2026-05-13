@@ -7,7 +7,7 @@ export default function Contact() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Contact Us</h1>
           <p className="text-white/80 text-base md:text-xl max-w-2xl mx-auto">
-            Get in touch with iracedu.com for expert research and academic consultancy.
+            Get in touch with IRAC Services for expert research and academic consultancy.
           </p>
         </div>
       </div>

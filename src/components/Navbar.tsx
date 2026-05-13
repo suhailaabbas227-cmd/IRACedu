@@ -34,7 +34,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0 cursor-pointer">
             <div className="flex flex-col max-w-[180px] md:max-w-none">
-              <span className="text-xl md:text-2xl font-bold text-brand-primary leading-none tracking-tighter">iracedu.com</span>
+              <span className="text-xl md:text-2xl font-bold text-brand-primary leading-none tracking-tighter">IRAC</span>
               <span className="text-[7px] md:text-[9px] uppercase tracking-[0.15em] md:tracking-[0.2em] text-slate-400 font-bold mt-1 line-clamp-1 md:line-clamp-none">Insight Research & Academic Consultancy</span>
             </div>
           </Link>

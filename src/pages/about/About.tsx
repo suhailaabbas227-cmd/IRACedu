@@ -242,7 +242,7 @@ export default function About() {
           <div className="text-center max-w-4xl mx-auto mb-12">
             <h2 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
               Looking for International Standard Research Support? <br />
-              iracedu.com is Your Complete Solution
+              IRAC Services is Your Complete Solution
             </h2>
             <p className="text-blue-200 text-base md:text-lg font-bold uppercase tracking-wider">
               Factors Which Help Us Gain Competitive Edge
