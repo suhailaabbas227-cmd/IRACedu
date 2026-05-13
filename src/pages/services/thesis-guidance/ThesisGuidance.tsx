@@ -38,7 +38,7 @@ export default function ThesisGuidance() {
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary leading-tight">
                 Comprehensive Research Support <br />
-                <span className="text-brand-secondary">for Every Milestone</span>
+                <span className="text-brand-primary">for Every Milestone</span>
               </h2>
               <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
                 Writing a thesis or dissertation is the most challenging part of an academic journey. At IRAC, we provide international standard consultancy & guidance that ensures your work meets the highest scholarly requirements.
@@ -85,8 +85,8 @@ export default function ThesisGuidance() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                  <div className="w-10 h-10 bg-brand-secondary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <ChevronRight className="w-5 h-5 text-brand-secondary" />
+                  <div className="w-10 h-10 bg-brand-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <ChevronRight className="w-5 h-5 text-brand-primary" />
                   </div>
                   <div>
                     <h4 className="font-bold text-brand-primary">Time-Bound Support</h4>

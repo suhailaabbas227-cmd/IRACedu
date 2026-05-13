@@ -22,7 +22,7 @@ export default function DataAnalysis() {
       <section className="py-24 bg-slate-50">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 text-center mb-20">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary mb-4">Our Technology Stack</h2>
-          <div className="w-20 h-1 bg-brand-secondary mx-auto"></div>
+          <div className="w-20 h-1 bg-brand-primary mx-auto"></div>
           <p className="text-slate-500 mt-6 text-base md:text-lg max-w-2xl mx-auto">We utilize industry-leading software to ensure the highest accuracy and reliability in your research & consultancy results.</p>
         </div>
 

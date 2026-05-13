@@ -18,7 +18,7 @@ export default function ResearchWorkshops() {
             </motion.div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-brand-primary mb-8 tracking-tight">
               Research & Consultancy Training <br />
-              <span className="text-brand-secondary">& Workshops</span>
+              <span className="text-brand-primary">& Workshops</span>
             </h1>
             <p className="text-slate-600 text-base md:text-xl lg:text-2xl leading-relaxed">
               Empowering the next generation of researchers & consultants through hands-on training, specialized workshops, and continuous academic mentorship.

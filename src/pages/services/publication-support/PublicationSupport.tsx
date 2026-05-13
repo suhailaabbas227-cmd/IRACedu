@@ -13,12 +13,12 @@ export default function PublicationSupport() {
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-white text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-sm"
           >
-            <Award className="w-5 h-5 text-brand-secondary" />
+            <Award className="w-5 h-5 text-white" />
             High Impact Results
           </motion.div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
             Scopus & Web of Science <br />
-            <span className="text-brand-secondary">Publication Support</span>
+            <span className="text-white">Publication Support</span>
           </h1>
           <p className="text-white/80 text-base md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
             Navigating the complex world of high-impact journals. We help you meet international standards and achieve successful publication in indexed journals.
@@ -89,13 +89,13 @@ export default function PublicationSupport() {
               </p>
               <div className="flex gap-4">
                 <div className="px-6 py-3 bg-brand-primary/5 border border-brand-primary/10 rounded-full text-brand-primary font-bold text-base">COPE Aligned</div>
-                <div className="px-6 py-3 bg-brand-secondary/5 border border-brand-secondary/10 rounded-full text-brand-secondary font-bold text-base">Indexed Focus</div>
+                <div className="px-6 py-3 bg-brand-primary/5 border border-brand-primary/10 rounded-full text-brand-primary font-bold text-base">Indexed Focus</div>
               </div>
             </div>
             <div className="lg:w-1/2 grid grid-cols-2 gap-4">
               <div className="h-32 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 font-bold text-brand-primary">SCOPUS</div>
               <div className="h-32 bg-brand-primary text-white rounded-2xl flex items-center justify-center font-bold">WoS (SSCI)</div>
-              <div className="h-32 bg-brand-secondary text-brand-primary rounded-2xl flex items-center justify-center font-bold">ESCI</div>
+              <div className="h-32 bg-slate-200 text-brand-primary rounded-2xl flex items-center justify-center font-bold">ESCI</div>
               <div className="h-32 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 font-bold text-brand-primary">SCIE</div>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function PublicationSupport() {
           <p className="text-white/70 text-base md:text-xl lg:text-2xl mb-12">Let our expert scholars help you get published in the world's most prestigious journals.</p>
           <button 
             onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-            className="bg-brand-secondary text-brand-primary px-12 py-5 rounded-full font-bold text-xl hover:shadow-2xl transition-all"
+            className="bg-white text-brand-primary px-12 py-5 rounded-full font-bold text-xl hover:shadow-2xl transition-all"
           >
             Submit Your Manuscript
           </button>

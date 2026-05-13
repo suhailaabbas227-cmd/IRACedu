@@ -221,7 +221,7 @@ export default function AIAssistant() {
                     >
                       <div className={cn(
                         "w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1",
-                        m.role === 'user' ? "bg-brand-secondary" : "bg-brand-primary"
+                        m.role === 'user' ? "bg-slate-500" : "bg-brand-primary"
                       )}>
                         {m.role === 'user' ? <User className="w-4 h-4 text-white" /> : <Bot className="w-4 h-4 text-white" />}
                       </div>
@@ -310,7 +310,7 @@ export default function AIAssistant() {
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
         {!isOpen && (
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-brand-secondary rounded-full border-2 border-white animate-pulse" />
+          <span className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full border-2 border-brand-primary animate-pulse" />
         )}
       </motion.button>
     </div>

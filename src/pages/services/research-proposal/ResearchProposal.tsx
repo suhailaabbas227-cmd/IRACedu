@@ -12,7 +12,7 @@ export default function ResearchProposal() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 bg-brand-secondary/20 border border-brand-secondary/30 px-4 py-2 rounded-full text-brand-secondary text-xs font-bold uppercase tracking-widest mb-8"
+            className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-white text-xs font-bold uppercase tracking-widest mb-8"
           >
             <Target className="w-4 h-4" />
             Precision Planning
@@ -58,7 +58,7 @@ export default function ResearchProposal() {
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">
                 Secure Your Academic <br />
-                <span className="text-brand-secondary">Approval with Confidence</span>
+                <span className="text-brand-primary">Approval with Confidence</span>
               </h2>
               <div className="space-y-4">
                 {[
@@ -96,8 +96,8 @@ export default function ResearchProposal() {
               <p className="text-slate-500 text-base">We help you identify unique research niche that adds value to the field.</p>
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-              <div className="w-12 h-12 bg-brand-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <Target className="w-6 h-6 text-brand-secondary" />
+              <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <Target className="w-6 h-6 text-brand-primary" />
               </div>
               <h4 className="text-xl font-bold text-brand-primary mb-3">Precision Writing</h4>
               <p className="text-slate-500 text-base">Academic writing that is formal, precise, and logically structured.</p>

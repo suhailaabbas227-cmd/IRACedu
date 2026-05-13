@@ -13,7 +13,7 @@ export default function InstrumentDesign() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2 text-brand-secondary text-sm font-bold uppercase tracking-widest mb-6"
+              className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6"
             >
               <PencilRuler className="w-5 h-5" />
               Scientific Measurement
@@ -33,7 +33,7 @@ export default function InstrumentDesign() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary mb-8 underline decoration-brand-secondary underline-offset-8">Our Rigorous Consultancy Process</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary mb-8 underline decoration-brand-primary underline-offset-8">Our Rigorous Consultancy Process</h2>
               <div className="space-y-12">
                 <div className="flex gap-6">
                   <div className="w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold shrink-0">1</div>
@@ -97,7 +97,7 @@ export default function InstrumentDesign() {
       </section>
 
       {/* CTA */}
-      <section className="bg-brand-secondary py-16">
+      <section className="bg-slate-50 py-16 border-y border-slate-100">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-brand-primary">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2">Ensure Your Data is Accurate</h2>
