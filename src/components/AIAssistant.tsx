@@ -20,10 +20,10 @@ function getGenAI() {
 }
 
 const SYSTEM_INSTRUCTION = `
-You are the AI Assistant for IRAC Services (Insight Research & Academic Consultancy).
-Your goal is to provide helpful, professional, and concise information to researchers, students, and professionals about IRAC's services.
+You are the AI Assistant for iracedu.com (Insight Research & Academic Consultancy).
+Your goal is to provide helpful, professional, and concise information to researchers, students, and professionals about iracedu.com's services.
 
-IRAC Services Overview:
+iracedu.com Overview:
 - Led by Engr. Muhammad Ali Shaikh (B.E. Electronics, LLB, Ph.D Candidate).
 - Provides international standard research services.
 - Specializes in:
@@ -138,7 +138,7 @@ export default function AIAssistant() {
                   <Bot className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm">IRAC Assistant</h3>
+                  <h3 className="font-bold text-sm">iracedu.com Assistant</h3>
                   <p className="text-[10px] text-white/70">Online | PhD Consultancy Expert</p>
                 </div>
               </div>
@@ -207,7 +207,7 @@ export default function AIAssistant() {
                     <div className="text-center py-10 px-6">
                       <Bot className="w-12 h-12 text-brand-primary/20 mx-auto mb-4" />
                       <p className="text-slate-500 text-sm">
-                        Hello! I'm the IRAC AI assistant. How can I help you with your research or academic project today?
+                        Hello! I'm the iracedu.com AI assistant. How can I help you with your research or academic project today?
                       </p>
                     </div>
                   )}
@@ -291,7 +291,7 @@ export default function AIAssistant() {
                 </button>
               </form>
               <p className="text-[10px] text-center text-slate-400 mt-2">
-                Powered by Gemini. Built for IRAC Services.
+                Powered by Gemini. Built for iracedu.com.
               </p>
             </div>
           </motion.div>

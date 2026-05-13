@@ -267,7 +267,7 @@ export default function Home() {
               <div className="space-y-6">
                   <div className="space-y-4 md:space-y-6 text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
                   <p>
-                    At IRAC Services, we believe that academic excellence is reachable with the right guidance. Our team of Ph.D. scholars provides specialized consultancy for thesis guidance, proposal development, and complex data analysis.
+                    At iracedu.com, we believe that academic excellence is reachable with the right guidance. Our team of Ph.D. scholars provides specialized consultancy for thesis guidance, proposal development, and complex data analysis.
                   </p>
                   <p>
                     Whether you are working on a dissertation or a high-impact journal article, we provide the tools and expertise to ensure your work meets the rigorous standards of Scopus and Web of Science publications.
