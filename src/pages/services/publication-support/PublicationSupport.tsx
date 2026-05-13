@@ -1,0 +1,121 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { Globe, BookOpen, ScrollText, Award } from 'lucide-react';
+
+export default function PublicationSupport() {
+  return (
+    <div className="bg-white min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-brand-primary to-slate-900 py-24 relative overflow-hidden text-center">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-white text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-sm"
+          >
+            <Award className="w-5 h-5 text-brand-secondary" />
+            High Impact Results
+          </motion.div>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+            Scopus & Web of Science <br />
+            <span className="text-brand-secondary">Publication Support</span>
+          </h1>
+          <p className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Navigating the complex world of high-impact journals. We help you meet international standards and achieve successful publication in indexed journals.
+          </p>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-24">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="p-10 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl transition-shadow group">
+              <div className="w-14 h-14 bg-brand-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                <Globe className="w-7 h-7 text-brand-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-brand-primary mb-4">Journal Selection</h3>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Matching your manuscript with the most appropriate Scopus, WoS, or ESCI-indexed journals to maximize acceptance probability.
+              </p>
+              <ul className="space-y-2 text-sm text-slate-500">
+                <li>• Impact Factor Analysis</li>
+                <li>• Q1-Q4 Ranking Verification</li>
+                <li>• Aim & Scope Alignment</li>
+              </ul>
+            </div>
+
+            <div className="p-10 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl transition-shadow group">
+              <div className="w-14 h-14 bg-brand-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                <ScrollText className="w-7 h-7 text-brand-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-brand-primary mb-4">Manuscript Prep</h3>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Professional editing and formatting to ensure your work adheres to strict international submission guidelines.
+              </p>
+              <ul className="space-y-2 text-sm text-slate-500">
+                <li>• Language Polishing</li>
+                <li>• Citation & Ref Formatting</li>
+                <li>• Similarity Reports (Turnitin)</li>
+              </ul>
+            </div>
+
+            <div className="p-10 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl transition-shadow group">
+              <div className="w-14 h-14 bg-brand-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                <BookOpen className="w-7 h-7 text-brand-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-brand-primary mb-4">Peer Review Support</h3>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Assistance in responding to reviewer comments and managing the revision process for a successful outcome.
+              </p>
+              <ul className="space-y-2 text-sm text-slate-500">
+                <li>• Point-by-point Responses</li>
+                <li>• Structural Revisions</li>
+                <li>• Final Proofreading</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+          <div className="bg-white rounded-[40px] p-12 lg:p-20 shadow-sm border border-slate-100 flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl md:text-5xl font-bold text-brand-primary mb-8 tracking-tight">Our Ethical <br />Commitment</h2>
+              <p className="text-slate-600 text-lg leading-relaxed mb-8">
+                IRAC strictly adheres to COPE (Committee on Publication Ethics) guidelines. We do not support predatory journals or unethical publication practices. Our goal is to enhance the quality of your research so it stands on its own merits in the global scientific community.
+              </p>
+              <div className="flex gap-4">
+                <div className="px-6 py-3 bg-brand-primary/5 border border-brand-primary/10 rounded-full text-brand-primary font-bold text-sm">COPE Aligned</div>
+                <div className="px-6 py-3 bg-brand-secondary/5 border border-brand-secondary/10 rounded-full text-brand-secondary font-bold text-sm">Indexed Focus</div>
+              </div>
+            </div>
+            <div className="lg:w-1/2 grid grid-cols-2 gap-4">
+              <div className="h-32 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 font-bold text-slate-300">SCOPUS</div>
+              <div className="h-32 bg-brand-primary text-white rounded-2xl flex items-center justify-center font-bold">WoS (SSCI)</div>
+              <div className="h-32 bg-brand-secondary text-brand-primary rounded-2xl flex items-center justify-center font-bold">ESCI</div>
+              <div className="h-32 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 font-bold text-slate-300">SCIE</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-brand-primary text-center">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Achieve Global Visibility</h2>
+          <p className="text-white/70 text-lg mb-12">Let our expert scholars help you get published in the world's most prestigious journals.</p>
+          <button 
+            onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+            className="bg-brand-secondary text-brand-primary px-12 py-5 rounded-full font-bold text-xl hover:shadow-2xl transition-all"
+          >
+            Submit Your Manuscript
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
