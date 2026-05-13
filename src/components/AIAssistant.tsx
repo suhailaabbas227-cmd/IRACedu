@@ -5,7 +5,19 @@ import { GoogleGenAI } from "@google/genai";
 import ReactMarkdown from 'react-markdown';
 import { cn } from '../lib/utils';
 
-const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+let genAIClient: any = null;
+
+function getGenAI() {
+  if (genAIClient) return genAIClient;
+  
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error("Missing Gemini API Key. Please configure GEMINI_API_KEY in your environment variables.");
+  }
+  
+  genAIClient = new GoogleGenAI({ apiKey });
+  return genAIClient;
+}
 
 const SYSTEM_INSTRUCTION = `
 You are the AI Assistant for IRAC Services (Insight Research & Academic Consultancy).
@@ -78,7 +90,8 @@ export default function AIAssistant() {
     setIsLoading(true);
 
     try {
-      const response = await genAI.models.generateContent({
+      const ai = getGenAI();
+      const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
         contents: [
           ...messages.map(m => ({
@@ -96,7 +109,13 @@ export default function AIAssistant() {
       setMessages(prev => [...prev, { role: 'model', content: aiText }]);
     } catch (error) {
       console.error("AI Error:", error);
-      setMessages(prev => [...prev, { role: 'model', content: "I'm having trouble connecting right now. Please try again or contact us directly." }]);
+      let errorMessage = "I'm having trouble connecting right now. Please try again or contact us directly.";
+      
+      if (error instanceof Error && error.message.includes("GEMINI_API_KEY")) {
+        errorMessage = "The AI Assistant is currently not configured with an API key. Please contact the administrator.";
+      }
+      
+      setMessages(prev => [...prev, { role: 'model', content: errorMessage }]);
     } finally {
       setIsLoading(false);
     }
