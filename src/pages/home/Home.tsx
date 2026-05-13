@@ -85,10 +85,10 @@ export default function Home() {
             className="max-w-6xl"
           >
             <p className="text-white text-base md:text-lg font-bold mb-4 tracking-tight">
-              International Standard Research Services
+              International Standard Research & Consultancy Services
             </p>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold text-white leading-[1.1] mb-6 md:mb-10 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 md:mb-10 tracking-tight">
               International Standard Work — <br />
               <span className="text-white">At Your Doorstep</span>
             </h1>
@@ -97,7 +97,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-sm md:text-lg text-white/90 mb-8 md:text-xl md:mb-10 max-w-3xl leading-relaxed font-bold"
+              className="text-base md:text-xl text-white/90 mb-8 md:mb-10 max-w-3xl leading-relaxed font-bold"
             >
               Insight Research & Academic Consultancy (IRAC) provides end-to-end support for researchers, students, and professionals. Our expert PhD scholars help you navigate your academic journey with excellence.
             </motion.p>
@@ -125,7 +125,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Research Assistance Section */}
+      {/* Research & Consultancy Assistance Section */}
       <section className="py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
@@ -154,11 +154,11 @@ export default function Home() {
               className="flex flex-col justify-center py-8"
             >
               <div className="space-y-4 md:space-y-6">
-                <h2 className="text-2xl md:text-3xl font-bold text-brand-primary leading-tight tracking-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary leading-tight tracking-tight">
                   Insight Research & Academic Consultancy (IRAC)
                 </h2>
-                <p className="text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed">
-                  Led by Engr. Muhammad Ali Shaikh and a team of professional Ph.D. Scholars, we ensure your research is of international standard.
+                <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
+                  Led by Engr. Muhammad Ali Shaikh and a team of professional Ph.D. Scholars, we ensure your research & consultancy work is of international standard.
                 </p>
                 <div className="pt-2">
                   <button 
@@ -184,8 +184,8 @@ export default function Home() {
 
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 mb-16 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Premium Services</h2>
-            <p className="text-slate-400">Comprehensive academic support tailored to your research needs, from initial draft to final publication.</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Our Premium Services</h2>
+            <p className="text-slate-400 text-base md:text-lg">Comprehensive academic support tailored to your research needs, from initial draft to final publication.</p>
           </div>
         </div>
 
@@ -250,7 +250,7 @@ export default function Home() {
       <section className="py-24 bg-slate-50/50">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-primary leading-tight tracking-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary leading-tight tracking-tight">
               Empowering Researchers with Global Standards
             </h2>
           </div>
@@ -265,7 +265,7 @@ export default function Home() {
               className="flex flex-col justify-center py-8"
             >
               <div className="space-y-6">
-                  <div className="space-y-4 md:space-y-6 text-slate-600 text-sm md:text-base lg:text-lg leading-relaxed">
+                  <div className="space-y-4 md:space-y-6 text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
                   <p>
                     At IRAC Services, we believe that academic excellence is reachable with the right guidance. Our team of Ph.D. scholars provides specialized consultancy for thesis guidance, proposal development, and complex data analysis.
                   </p>
@@ -307,10 +307,10 @@ export default function Home() {
       <section className="py-24 bg-brand-primary relative overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-[42px] font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               Comprehensive Consultancy Across Disciplines
             </h2>
-            <p className="text-white/70 font-medium">Expert guidance available for every professional and academic field.</p>
+            <p className="text-white/70 text-base md:text-lg font-medium">Expert guidance available for every professional and academic field.</p>
           </div>
         </div>
 
@@ -391,8 +391,8 @@ export default function Home() {
             >
               <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1521791136364-798a7bc0d267?auto=format&fit=crop&q=80&w=2070" 
-                  alt="Trusted consultancy partnership" 
+                  src="https://images.unsplash.com/photo-1454165833767-027ffea702be?auto=format&fit=crop&q=80&w=2070" 
+                  alt="International Research and Professional Standards" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -420,17 +420,17 @@ export default function Home() {
             >
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h2 className="text-2xl md:text-3xl font-bold text-brand-primary leading-tight tracking-tight">
-                    International Research Standards
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary leading-tight tracking-tight">
+                    International Research & Consultancy Standards
                   </h2>
                   <div className="w-20 h-1.5 bg-brand-primary rounded-full"></div>
                 </div>
                 
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  Research integrity is at the heart of IRAC. We ensure your work is original, methodology is sound, and analysis is accurate.
+                <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
+                  Research & Consultancy integrity is at the heart of IRAC. We ensure your work is original, methodology is sound, and analysis is accurate.
                 </p>
                 
-                <p className="text-slate-600 text-lg leading-relaxed">
+                <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
                   Our consultancy respects your intellectual property and helps you achieve professional publication results globally.
                 </p>
 

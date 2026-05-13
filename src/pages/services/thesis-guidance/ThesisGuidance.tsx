@@ -17,11 +17,11 @@ export default function ThesisGuidance() {
             <GraduationCap className="w-4 h-4" />
             Academic Excellence
           </motion.div>
-          <h1 className="text-3xl md:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-8 tracking-tight">
             Thesis & Dissertation Guidance
           </h1>
-          <p className="text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Professional mentoring from Ph.D. scholars to help you navigate your research journey from topic selection to final defense.
+          <p className="text-white/80 text-base md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
+            Professional mentoring from Ph.D. scholars to help you navigate your research & consultancy journey from topic selection to final defense.
           </p>
         </div>
       </section>
@@ -36,12 +36,12 @@ export default function ThesisGuidance() {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-primary leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary leading-tight">
                 Comprehensive Research Support <br />
                 <span className="text-brand-secondary">for Every Milestone</span>
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                Writing a thesis or dissertation is the most challenging part of an academic journey. At IRAC, we provide international standard guidance that ensures your work meets the highest scholarly requirements.
+              <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
+                Writing a thesis or dissertation is the most challenging part of an academic journey. At IRAC, we provide international standard consultancy & guidance that ensures your work meets the highest scholarly requirements.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -70,8 +70,8 @@ export default function ThesisGuidance() {
               className="bg-slate-50 p-10 rounded-3xl border border-slate-100 shadow-xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-brand-primary/5 rounded-bl-[100px]" />
-              <h3 className="text-2xl font-bold text-brand-primary mb-6">Expert Methodology</h3>
-              <p className="text-slate-600 mb-8 leading-relaxed">
+              <h3 className="text-2xl md:text-3xl font-bold text-brand-primary mb-6">Expert Methodology</h3>
+              <p className="text-slate-600 text-base md:text-lg mb-8 leading-relaxed">
                 Under the leadership of Engr. Muhammad Ali Shaikh and our Ph.D. mentor network, we apply rigorous standards to your research, ensuring it is both innovative and academically sound.
               </p>
               <div className="space-y-4">
@@ -102,8 +102,8 @@ export default function ThesisGuidance() {
       {/* CTA Section */}
       <section className="py-24 bg-brand-primary relative overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 text-center relative z-10">
-          <h2 className="text-2xl md:text-5xl font-bold text-white mb-6 md:mb-8 tracking-tight">Ready to Start Your Research?</h2>
-          <p className="text-white/70 text-sm md:text-lg max-w-2xl mx-auto mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tight">Ready to Start Your Research or Consultancy?</h2>
+          <p className="text-white/70 text-base md:text-xl max-w-2xl mx-auto mb-8 md:mb-12">
             Connect with our Ph.D. scholars today for a personalized thesis guidance plan.
           </p>
           <button 
