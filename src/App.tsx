@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
@@ -13,7 +13,7 @@ import Contact from './pages/contact/Contact';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="antialiased">
         <MainLayout>
           <Routes>
@@ -30,6 +30,6 @@ export default function App() {
           </Routes>
         </MainLayout>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
