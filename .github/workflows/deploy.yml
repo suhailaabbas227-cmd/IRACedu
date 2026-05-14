@@ -2,7 +2,7 @@ name: Deploy React to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Change to "master" if your main branch is called master
+    branches: ["main", "master"] # Change to "master" if your main branch is called master
 
 permissions:
   contents: read
