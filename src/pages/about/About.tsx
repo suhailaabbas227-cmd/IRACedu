@@ -5,71 +5,37 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-brand-primary pt-24 pb-20">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-brand-primary pt-24 pb-16">
+        {/* Full Background Image - Highly Visible */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <img 
-            src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=2070" 
-            alt="Library background"
-            className="w-full h-full object-cover opacity-30"
+            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=2070" 
+            alt="Academic campus"
+            className="w-full h-full object-cover opacity-90 saturate-[1.15]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-brand-primary/70"></div>
+          {/* Subtle color overlay to guarantee white text readability while keeping the image fully visible */}
+          <div className="absolute inset-0 bg-brand-primary/45 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-brand-primary/30" />
         </div>
-
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-6xl"
-          >
-            <p className="text-white text-base md:text-lg font-bold mb-4 tracking-tight">
-              International Standard Research & Consultancy Services at Your Doorstep
-            </p>
-            
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 md:mb-10 tracking-tight">
-              IRAC Providing High <br />
-              <span className="text-white">Research & Consultancy Standards</span>
-            </h1>
-
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white flex flex-col items-start text-left">
+          <div className="max-w-4xl w-full flex flex-col items-start">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base md:text-xl text-white/90 mb-8 md:mb-10 max-w-5xl leading-relaxed font-bold"
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase"
             >
-              Insight Research & Academic Consultancy (IRAC) is committed to being a dependable solution partner for researchers worldwide. We follow procedures that adhere to international principles of academic publication and scientific documentation.
-            </motion.p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-5 mb-10">
-              {[
-                "International Standard Research & Consultancy Services",
-                "Complete Satisfaction of Customers",
-                "Thesis and Dissertation Guidance",
-                "PhD Researcher Support",
-                "Scopus & Web of Science Publication Support",
-                "SEM/SmartPLS/SPSS/Python/Stata Analysis",
-                "Affordable Charges"
-              ].map((feature, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="bg-white/10 rounded-full p-1 shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-white text-base font-bold leading-tight">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex">
-              <button 
-                onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-                className="bg-white text-brand-primary px-10 py-4 rounded-xl font-bold text-base transition-all hover:bg-slate-100 shadow-xl inline-block"
-              >
-                Chat Now
-              </button>
-            </div>
-          </motion.div>
+              <Users className="w-4 h-4" />
+              Global Consultancy Standards
+            </motion.div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
+              About IRAC Services
+            </h1>
+            <p className="text-sm md:text-base lg:text-lg text-white/95 max-w-2xl leading-relaxed font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+              Discover our mission, our values, and meet our world-class consultancy team of active PhD scholars.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -84,12 +50,31 @@ export default function About() {
           
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2 space-y-8">
-              <p className="text-slate-700 text-base md:text-lg lg:text-xl leading-relaxed">
-                Led by Engr. Muhammad Ali Shaikh, our team works hard to meet our clients' needs by providing academic solutions including thesis guidance, research proposal development, and high-impact publication support. According to international academic standards, our staff ensures timely and high-quality results.
-              </p>
-              <p className="text-slate-700 text-base md:text-lg lg:text-xl leading-relaxed">
-                Our experts specialize in advanced data analysis, supporting SEM, SmartPLS, SPSS, Python, and Stata for research. We mine data and provide relevant insights to help you produce professional-grade academic work. If you're stressed about deadlines or quality, IRAC is your trusted partner for scholarly success.
-              </p>
+              <div className="space-y-6 text-slate-700 text-base md:text-lg">
+                <p className="leading-relaxed font-medium text-slate-800">
+                  IRAC delivers high-impact academic solutions and advanced data analysis tailored to international standards. We help scholars, researchers, and students overcome tight deadlines and research stress to achieve professional-grade results.
+                </p>
+                <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm space-y-4">
+                  <h3 className="text-xl font-bold text-brand-primary">What We Do</h3>
+                  <div className="space-y-3 text-sm md:text-base">
+                    <div className="flex gap-2 items-start">
+                      <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-2 shrink-0"></div>
+                      <p className="leading-relaxed">
+                        <strong className="text-slate-900 font-semibold">Academic Support:</strong> Comprehensive thesis guidance, research proposal development, and publication support.
+                      </p>
+                    </div>
+                    <div className="flex gap-2 items-start">
+                      <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-2 shrink-0"></div>
+                      <p className="leading-relaxed">
+                        <strong className="text-slate-900 font-semibold">Advanced Data Analysis:</strong> Specialized data mining and statistical modeling using SEM, SmartPLS, SPSS, Python, and Stata.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm md:text-base italic bg-slate-100 p-4 border-l-4 border-brand-primary rounded-r-lg">
+                  Our team, led by Engr. Muhammad Ali Shaikh, is dedicated to turning complex data into seamless, publishable scholarly success.
+                </p>
+              </div>
               <div className="flex">
                 <button 
                   onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
@@ -225,58 +210,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      {/* Competitive Edge Section */}
-      <section className="py-16 bg-gradient-to-br from-brand-primary via-[#1a2a5a] to-brand-primary text-white relative overflow-hidden">
-        {/* Background Overlay */}
-        <div className="absolute inset-0 z-0 opacity-20">
-          <img 
-            src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=2073" 
-            alt="Books background"
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-        </div>
-        <div className="absolute inset-0 bg-brand-primary/40 z-0"></div>
 
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="text-center max-w-4xl mx-auto mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
-              Looking for International Standard Research Support? <br />
-              IRAC Services is Your Complete Solution
-            </h2>
-            <p className="text-blue-200 text-base md:text-lg font-bold uppercase tracking-wider">
-              Factors Which Help Us Gain Competitive Edge
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 max-w-5xl mx-auto">
-            {[
-              "Professional Industry Standards",
-              "Reasonable Prices and 100% Reliable Services",
-              "Expert Research & Consultancy Support",
-              "Highly Qualified PhD Scholars",
-              "100% Customer Satisfaction and Original Work",
-              "Global Research Training & Capacity-Building",
-              "Quality Assurance by Professional Experts",
-              "International Publication Support"
-            ].map((factor, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-3 group"
-              >
-                <div className="bg-brand-primary rounded-full p-1 shrink-0 group-hover:scale-110 transition-transform">
-                  <CheckCircle2 className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-base font-medium text-slate-100">{factor}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

@@ -1,16 +1,42 @@
+import { motion } from 'motion/react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Contact() {
   return (
     <div className="bg-slate-50 min-h-screen">
-      <div className="bg-brand-primary py-24">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Contact Us</h1>
-          <p className="text-white/80 text-base md:text-xl max-w-2xl mx-auto">
-            Get in touch with IRAC Services for expert research and academic consultancy.
-          </p>
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-brand-primary pt-24 pb-16 text-white">
+        {/* Full Background Image - Highly Visible */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img 
+            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80&w=2070" 
+            alt="Contact us"
+            className="w-full h-full object-cover opacity-90 saturate-[1.15]"
+            referrerPolicy="no-referrer"
+          />
+          {/* Subtle color overlay to guarantee white text readability while keeping the image fully visible */}
+          <div className="absolute inset-0 bg-brand-primary/45 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-brand-primary/30" />
         </div>
-      </div>
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white flex flex-col items-start text-left">
+          <div className="max-w-4xl w-full flex flex-col items-start">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase"
+            >
+              <Mail className="w-4 h-4" />
+              Connect With Us
+            </motion.div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
+              Contact Us
+            </h1>
+            <p className="text-sm md:text-base lg:text-lg text-white/95 max-w-2xl leading-relaxed font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+              Get in touch with IRAC Services for expert research and academic consultancy.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

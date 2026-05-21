@@ -60,12 +60,37 @@ export default function Services() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-brand-primary py-24 relative overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">Academic Research & Consultancy Services</h1>
-          <p className="text-white/80 text-base md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
-            Insight Research & Academic Consultancy (IRAC) provides a complete suite of professional services to support your scholarly success.
-          </p>
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-brand-primary pt-24 pb-16">
+        {/* Full Background Image - Highly Visible */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img 
+            src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=2070" 
+            alt="Academic workspace"
+            className="w-full h-full object-cover opacity-90 saturate-[1.15]"
+            referrerPolicy="no-referrer"
+          />
+          {/* Subtle color overlay to guarantee white text readability while keeping the image fully visible */}
+          <div className="absolute inset-0 bg-brand-primary/45 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-brand-primary/30" />
+        </div>
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white flex flex-col items-start text-left">
+          <div className="max-w-4xl w-full flex flex-col items-start">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase"
+            >
+              <Globe className="w-4 h-4" />
+              Our Academic Expertise
+            </motion.div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
+              Academic Research & Consultancy Services
+            </h1>
+            <p className="text-sm md:text-base lg:text-lg text-white/95 max-w-2xl leading-relaxed font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+              Insight Research & Academic Consultancy (IRAC) provides a complete suite of professional services to support your scholarly success.
+            </p>
+          </div>
         </div>
       </section>
 

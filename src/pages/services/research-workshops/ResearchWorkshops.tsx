@@ -6,47 +6,70 @@ export default function ResearchWorkshops() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-slate-50 py-24 relative overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-brand-primary pt-24 pb-16 text-white">
+        {/* Full Background Image - Highly Visible */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img 
+            src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=2070" 
+            alt="Research training and workshops"
+            className="w-full h-full object-cover opacity-90 saturate-[1.15]"
+            referrerPolicy="no-referrer"
+          />
+          {/* Subtle color overlay to guarantee white text readability while keeping the image fully visible */}
+          <div className="absolute inset-0 bg-brand-primary/45 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-brand-primary/30" />
+        </div>
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white flex flex-col items-start text-left">
+          <div className="max-w-4xl w-full flex flex-col items-start">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="inline-block px-4 py-1.5 bg-brand-primary/10 text-brand-primary rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase"
             >
+              <Users className="w-4 h-4" />
               Capacity Building
             </motion.div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-brand-primary mb-8 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
               Research & Consultancy Training <br />
-              <span className="text-brand-primary">& Workshops</span>
+              <span className="text-white">& Workshops</span>
             </h1>
-            <p className="text-slate-600 text-base md:text-xl lg:text-2xl leading-relaxed">
+            <p className="text-sm md:text-base lg:text-lg text-white/95 max-w-2xl leading-relaxed font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
               Empowering the next generation of researchers & consultants through hands-on training, specialized workshops, and continuous academic mentorship.
             </p>
           </div>
-          <div className="relative">
-            <div className="aspect-square bg-brand-primary/5 rounded-[40px] rotate-3 absolute inset-0 -z-10" />
-            <div className="aspect-square bg-white rounded-[40px] shadow-2xl border border-slate-100 flex flex-col justify-center p-10">
-              <h3 className="text-2xl md:text-3xl font-bold text-brand-primary mb-8 text-center border-b pb-4">Workshop Learning Pillars</h3>
-              <div className="space-y-6">
-                {[
-                  { title: "Theoretical Foundations", text: "Mastering the core principles of research methodology." },
-                  { title: "Practical Application", text: "Hands-on training with industry-standard software." },
-                  { title: "Peer Collaboration", text: "Networking with Ph.D. scholars and professionals." },
-                  { title: "Global Certification", text: "Recognized certificates for career advancement." }
-                ].map((pillar, i) => (
-                  <div key={i} className="flex gap-4 group">
-                    <div className="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0 group-hover:bg-brand-primary group-hover:text-white transition-colors">
-                      <div className="text-xs font-bold leading-none">{i + 1}</div>
-                    </div>
-                    <div>
-                      <h4 className="text-sm md:text-base font-bold text-brand-primary leading-none mb-1">{pillar.title}</h4>
-                      <p className="text-sm text-slate-500 leading-tight">{pillar.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+        </div>
+      </section>
+
+      {/* Workshop Learning Pillars Section */}
+      <section className="py-20 bg-slate-50 relative overflow-hidden border-b border-slate-100">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-4">Workshop Learning Pillars</h2>
+            <div className="w-20 h-1 bg-brand-primary mx-auto rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: "Theoretical Foundations", text: "Mastering the core principles of research methodology." },
+              { title: "Practical Application", text: "Hands-on training with industry-standard software." },
+              { title: "Peer Collaboration", text: "Networking with Ph.D. scholars and professionals." },
+              { title: "Global Certification", text: "Recognized certificates for career advancement." }
+            ].map((pillar, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-shadow"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                  <div className="text-base font-bold">{i + 1}</div>
+                </div>
+                <h4 className="text-xl font-bold text-brand-primary mb-3">{pillar.title}</h4>
+                <p className="text-slate-500 text-sm md:text-base leading-relaxed">{pillar.text}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

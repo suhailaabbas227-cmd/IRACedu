@@ -6,22 +6,34 @@ export default function InstrumentDesign() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-slate-900 py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 to-transparent" />
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="max-w-3xl">
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-brand-primary pt-24 pb-16">
+        {/* Full Background Image - Highly Visible */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img 
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2070" 
+            alt="Survey questionnaire instruments"
+            className="w-full h-full object-cover opacity-90 saturate-[1.15]"
+            referrerPolicy="no-referrer"
+          />
+          {/* Subtle color overlay to guarantee white text readability while keeping the image fully visible */}
+          <div className="absolute inset-0 bg-brand-primary/45 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-brand-primary/30" />
+        </div>
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-20 w-full text-white flex flex-col items-start text-left">
+          <div className="max-w-4xl w-full flex flex-col items-start">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest mb-6"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase"
             >
-              <PencilRuler className="w-5 h-5" />
+              <PencilRuler className="w-4 h-4" />
               Scientific Measurement
             </motion.div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
               Instrument Design & Validation
             </h1>
-            <p className="text-slate-400 text-base md:text-xl lg:text-2xl leading-relaxed">
+            <p className="text-sm md:text-base lg:text-lg text-white/95 max-w-2xl leading-relaxed font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
               Developing valid and reliable research & consultancy tools, surveys, and questionnaires tailored to your specific constructs and study population.
             </p>
           </div>

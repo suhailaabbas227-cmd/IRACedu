@@ -1,30 +1,16 @@
 import { motion } from 'motion/react';
 import { 
-  CheckCircle2, Edit3, BookOpen, Search, CheckSquare, Users, ShieldCheck, 
-  MessageSquare, GraduationCap, BarChart3, Stethoscope, Briefcase, Laptop, 
-  Dna, Scale, Palette, Beaker, Leaf, Radio, Clock, Award, FileText
+  CheckCircle2, Edit3, Search, Users, ShieldCheck, 
+  MessageSquare, GraduationCap, BarChart3, Clock, Award, FileText
 } from 'lucide-react';
 
-const subjects = [
-  { name: "Medical & Health Sciences", icon: Stethoscope },
-  { name: "Business & Management", icon: Briefcase },
-  { name: "IT & Computer Science", icon: Laptop },
-  { name: "Life Sciences & Biology", icon: Dna },
-  { name: "Economics & Finance", icon: BarChart3 },
-  { name: "Social Sciences & Law", icon: Scale },
-  { name: "Arts & Humanities", icon: Palette },
-  { name: "Physical Sciences", icon: Beaker },
-  { name: "Environmental Science", icon: Leaf },
-  { name: "Media & Communication", icon: Radio },
-];
-
-const features = [
-  "Thesis & Dissertation Guidance",
-  "Research Proposal Development",
-  "Instrument Design & Validation",
-  "SPSS | SmartPLS | Python | Stata Analysis",
-  "Scopus & WoS Publication Support",
-  "Research Training Workshops"
+const trustFactors = [
+  "Led by Active Ph.D. Scholars & Senior Editors",
+  "Plagiarism-Free Coaching with Free Turnitin Checkers",
+  "100% Client-Consultant Confidentiality Guaranteed",
+  "Rigorous Support for Quantitative & Qualitative Research",
+  "Aligned with International Academic Writing Standards",
+  "Interactive 1-on-1 Mentorship & Continuous Revision Help"
 ];
 
 const services = [
@@ -65,63 +51,72 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-brand-primary pt-24 pb-20">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-[75vh] lg:min-h-[80vh] flex items-center overflow-hidden bg-brand-primary pt-20 pb-12">
+        {/* Full Background Image - Highly Visible */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <img 
             src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2070" 
-            alt="Academic background"
-            className="w-full h-full object-cover opacity-30"
+            alt="International Academic Support"
+            className="w-full h-full object-cover opacity-90 saturate-[1.15]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-brand-primary/70"></div>
+          {/* Subtle color overlay to guarantee white text readability while keeping the image fully visible */}
+          <div className="absolute inset-0 bg-brand-primary/45 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-brand-primary/30" />
         </div>
 
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-6xl"
-          >
-            <p className="text-white text-base md:text-lg font-bold mb-4 tracking-tight">
-              International Standard Research & Consultancy Services
-            </p>
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white flex flex-col items-start text-left">
+          <div className="max-w-5xl w-full flex flex-col items-start">
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 md:mb-10 tracking-tight">
-              International Standard Work — <br />
-              <span className="text-white">At Your Doorstep</span>
-            </h1>
-
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
+            {/* Pure text layout with responsive left alignment (no blurry backing panel) */}
+            <motion.div
+              initial={{ opacity: 0, y: -15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base md:text-xl text-white/90 mb-8 md:mb-10 max-w-3xl leading-relaxed font-bold"
+              transition={{ duration: 0.8 }}
+              className="w-full flex flex-col items-start py-2 mb-6"
             >
-              Insight Research & Academic Consultancy (IRAC) provides end-to-end support for researchers, students, and professionals. Our expert PhD scholars help you navigate your academic journey with excellence.
-            </motion.p>
+              <p className="text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase">
+                International Standard Research & Consultancy Services
+              </p>
+              
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
+                International Standard Work — <br />
+                <span className="text-white/95">At Your Doorstep</span>
+              </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-5 mb-10">
-              {features.map((feature, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="bg-white/10 rounded-full p-1 shrink-0">
+              <p className="text-sm md:text-base lg:text-lg text-white/95 max-w-3xl leading-relaxed font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                Insight Research & Academic Consultancy (IRAC) provides end-to-end support for researchers, students, and professionals. Our expert PhD scholars help you navigate your academic journey with excellence.
+              </p>
+            </motion.div>
+
+            {/* 6 Trust Points with beautiful, high-impact Glassmorphism effect & larger, clearer text */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 w-full">
+              {trustFactors.map((factor, i) => (
+                <motion.div 
+                  key={i} 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:bg-white/20 hover:border-white/35 transition-all duration-200 shadow-md transform hover:-translate-y-0.5 text-left"
+                >
+                  <div className="bg-white/25 rounded-full p-2 shrink-0 shadow-sm mt-0.5">
                     <CheckCircle2 className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-white text-base font-bold leading-tight">{feature}</span>
-                </div>
+                  <span className="text-white text-xs sm:text-sm md:text-base font-bold leading-snug tracking-wide drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)] whitespace-normal">{factor}</span>
+                </motion.div>
               ))}
             </div>
 
             <div className="flex">
               <button 
                 onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-                className="bg-white text-brand-primary px-10 py-4 rounded-xl font-bold text-base transition-all hover:bg-slate-100 shadow-xl inline-block"
+                className="bg-white text-brand-primary hover:text-white hover:bg-white/10 hover:border-white hover:backdrop-blur-md border border-transparent px-8 py-3.5 rounded-xl font-bold text-sm md:text-base transition-all duration-300 shadow-xl inline-block"
               >
                 Chat Now
               </button>
             </div>
-          </motion.div>
+
+          </div>
         </div>
       </section>
 
@@ -303,79 +298,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Subjects Section */}
-      <section className="py-24 bg-brand-primary relative overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Comprehensive Consultancy Across Disciplines
-            </h2>
-            <p className="text-white/70 text-base md:text-lg font-medium">Expert guidance available for every professional and academic field.</p>
-          </div>
-        </div>
 
-        <div className="space-y-8">
-          {/* Row 1: Left to Right */}
-          <div className="flex overflow-hidden">
-            <motion.div 
-              animate={{ x: [0, -1920] }}
-              transition={{ 
-                duration: 40, 
-                repeat: Infinity, 
-                ease: "linear" 
-              }}
-              className="flex gap-6 whitespace-nowrap"
-            >
-              {[...subjects, ...subjects, ...subjects].map((subject, i) => (
-                <div
-                  key={i}
-                  className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-all group flex flex-col items-center text-center min-w-[220px]"
-                >
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-white transition-colors">
-                    <subject.icon className="w-6 h-6 text-white group-hover:text-brand-primary transition-colors" />
-                  </div>
-                  <h3 className="text-white font-semibold text-sm md:text-base leading-tight">
-                    {subject.name}
-                  </h3>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Row 2: Right to Left */}
-          <div className="flex overflow-hidden">
-            <motion.div 
-              animate={{ x: [-1920, 0] }}
-              transition={{ 
-                duration: 45, 
-                repeat: Infinity, 
-                ease: "linear" 
-              }}
-              className="flex gap-6 whitespace-nowrap"
-            >
-              {[...subjects.slice().reverse(), ...subjects.slice().reverse(), ...subjects.slice().reverse()].map((subject, i) => (
-                <div
-                  key={i}
-                  className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-all group flex flex-col items-center text-center min-w-[220px]"
-                >
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-white transition-colors">
-                    <subject.icon className="w-6 h-6 text-white group-hover:text-brand-primary transition-colors" />
-                  </div>
-                  <h3 className="text-white font-semibold text-sm md:text-base leading-tight">
-                    {subject.name}
-                  </h3>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12 mt-16 text-center relative z-10">
-          <p className="text-slate-400 text-sm max-w-2xl mx-auto">
-            Our expertise spans across all major academic and professional disciplines, ensuring tailored consultation for your specific goals.
-          </p>
-        </div>
-      </section>
 
       {/* Security Section */}
       <section className="py-24 bg-white overflow-hidden">
@@ -387,23 +310,21 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative min-h-[400px] lg:min-h-[500px]"
+              className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-slate-100"
             >
-              <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1454165833767-027ffea702be?auto=format&fit=crop&q=80&w=2070" 
-                  alt="International Research and Professional Standards" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                {/* Floating Security Badge Overlay */}
-                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-blue-100 flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                    <ShieldCheck className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-[#162447] font-bold text-sm">Intellectual Privacy</p>
-                  </div>
+              <img 
+                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1200" 
+                alt="Academic research and standards" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+              {/* Floating Security Badge Overlay */}
+              <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-blue-100 flex items-center gap-3 z-10">
+                <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-md">
+                  <ShieldCheck className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-[#162447] font-bold text-sm">Intellectual Privacy</p>
                 </div>
               </div>
               {/* Decorative background shape */}
