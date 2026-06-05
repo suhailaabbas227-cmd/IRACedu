@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageSquare, X, Send, Bot, User, Loader2, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { MessageSquare, X, Send, Bot, User, Loader2, CheckCircle2 } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
 import ReactMarkdown from 'react-markdown';
 import { cn } from '../lib/utils';
@@ -70,9 +70,10 @@ export default function AIAssistant() {
   const [enquiryMsg, setEnquiryMsg] = useState('');
   const [enquiryLoading, setEnquiryLoading] = useState(false);
   const [enquiryError, setEnquiryError] = useState<string | null>(null);
-  const [isSimulated, setIsSimulated] = useState(false);
 
-  const web3FormsKey = (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY;
+  // Destination inbox for chatbot enquiries. Delivered via FormSubmit
+  // (no API key or account needed). Must match the contact form inbox.
+  const CONTACT_INBOX = 'info@iracedu.com';
 
   const handleEnquirySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,37 +85,28 @@ export default function AIAssistant() {
     setEnquiryError(null);
     setEnquiryLoading(true);
 
-    if (!web3FormsKey) {
-      setTimeout(() => {
-        setEnquiryLoading(false);
-        setEnquirySent(true);
-        setIsSimulated(true);
-      }, 800);
-      return;
-    }
-
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_INBOX}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          access_key: web3FormsKey,
           name: enquiryName,
           email: enquiryEmail,
-          subject: 'New Chatbot Lead/Enquiry',
+          _subject: 'IRAC Website: New Chatbot Lead/Enquiry',
           message: enquiryMsg,
-          from_name: 'IRAC Website Chatbot',
+          _template: 'table',
+          _captcha: 'false',
         }),
       });
 
       const result = await response.json();
 
-      if (result.success) {
+      // FormSubmit returns { success: "true" | true, message: string }
+      if (response.ok && (result.success === true || result.success === 'true')) {
         setEnquirySent(true);
-        setIsSimulated(false);
         setEnquiryName('');
         setEnquiryEmail('');
         setEnquiryMsg('');
@@ -127,12 +119,6 @@ export default function AIAssistant() {
     } finally {
       setEnquiryLoading(false);
     }
-  };
-
-  const handleEnquiryMailtoFallback = () => {
-    const formattedSubject = encodeURIComponent('Inquiry from IRAC Website Chatbot');
-    const bodyText = encodeURIComponent(`Name: ${enquiryName}\nEmail: ${enquiryEmail}\n\nMessage:\n${enquiryMsg}`);
-    window.location.href = `mailto:info@iracedu.com?subject=${formattedSubject}&body=${bodyText}`;
   };
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -238,25 +224,7 @@ export default function AIAssistant() {
                         Thank you for reaching out. Our consultancy team will review your message and reply back within 24 hours.
                       </p>
 
-                      {isSimulated && (
-                        <div className="bg-amber-50 border border-amber-200 p-3 rounded-lg text-left text-xs text-amber-800 space-y-2 mt-2">
-                          <p className="font-semibold flex items-center gap-1.5">
-                            <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
-                            Admin Note: Configure Inbox
-                          </p>
-                          <p className="text-[11px] text-amber-700 leading-normal">
-                            To send form messages directly to <strong className="text-brand-primary">info@iracedu.com</strong>, add a free Web3Forms license key as <code className="bg-amber-100 px-1 py-0.5 rounded font-mono text-[10px]">VITE_WEB3FORMS_ACCESS_KEY</code> in project Settings.
-                          </p>
-                          <button 
-                            onClick={handleEnquiryMailtoFallback}
-                            className="w-full bg-brand-primary text-white text-[11px] py-1.5 font-bold transition-all hover:bg-brand-primary/95"
-                          >
-                            Send via Mail App Manually
-                          </button>
-                        </div>
-                      )}
-
-                      <button 
+                      <button
                         onClick={() => {
                           setShowEnquiryForm(false);
                           setEnquirySent(false);
