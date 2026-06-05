@@ -15,7 +15,7 @@ export default function Contact() {
   // every submission straight to this address — no API key or account needed.
   // The first submission triggers a one-time confirmation email from
   // FormSubmit; click the activation link in it to start receiving messages.
-  const CONTACT_INBOX = 'suhailaabbas227@gmail.com';
+  const CONTACT_INBOX = 'info@iracedu.com';
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
