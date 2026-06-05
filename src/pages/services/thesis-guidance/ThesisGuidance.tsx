@@ -21,15 +21,6 @@ export default function ThesisGuidance() {
         </div>
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-20 w-full text-white flex flex-col items-start text-left">
           <div className="max-w-4xl w-full flex flex-col items-start">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase"
-            >
-              <GraduationCap className="w-4 h-4" />
-              Academic Excellence
-            </motion.div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
               Thesis & Dissertation Guidance
             </h1>
@@ -122,7 +113,7 @@ export default function ThesisGuidance() {
           </p>
           <button 
             onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-            className="bg-white text-brand-primary px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-base md:text-xl hover:bg-white/90 transition-all shadow-2xl"
+            className="bg-white text-brand-primary border-2 border-white hover:bg-transparent hover:text-white px-8 md:px-12 py-4 md:py-5 rounded-none font-bold text-base md:text-xl transition-all duration-300 shadow-2xl"
           >
             Check Availability
           </button>

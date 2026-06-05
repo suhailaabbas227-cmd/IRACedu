@@ -21,15 +21,6 @@ export default function ResearchWorkshops() {
         </div>
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white flex flex-col items-start text-left">
           <div className="max-w-4xl w-full flex flex-col items-start">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase"
-            >
-              <Users className="w-4 h-4" />
-              Capacity Building
-            </motion.div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
               Research & Consultancy Training <br />
               <span className="text-white">& Workshops</span>
@@ -133,13 +124,13 @@ export default function ResearchWorkshops() {
           <div className="flex flex-wrap justify-center gap-4">
             <button 
               onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-              className="bg-white text-brand-primary px-10 py-4 rounded-xl font-bold hover:bg-slate-100 transition-colors"
+              className="bg-white text-brand-primary border-2 border-white hover:bg-transparent hover:text-white px-10 py-4 rounded-none font-bold transition-all duration-300"
             >
               Upcoming Schedule
             </button>
             <button 
               onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-              className="bg-transparent border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold hover:bg-white/10 transition-colors"
+              className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-none font-bold hover:bg-white hover:text-brand-primary transition-all duration-300"
             >
               Custom Workshop Request
             </button>

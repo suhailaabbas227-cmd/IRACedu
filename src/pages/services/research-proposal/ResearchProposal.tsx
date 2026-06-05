@@ -21,15 +21,6 @@ export default function ResearchProposal() {
         </div>
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-20 w-full text-white flex flex-col items-start text-left">
           <div className="max-w-4xl w-full flex flex-col items-start">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase"
-            >
-              <Target className="w-4 h-4" />
-              Precision Planning
-            </motion.div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
               Research & Consultancy Proposal Development
             </h1>
@@ -133,7 +124,7 @@ export default function ResearchProposal() {
           <h3 className="text-3xl md:text-5xl font-bold text-brand-primary mb-8">Need Help with Your Proposal?</h3>
           <button 
             onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-            className="bg-brand-primary text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-brand-primary/90 transition-all shadow-xl"
+            className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-10 py-4 rounded-none font-bold text-lg transition-all duration-300 shadow-xl"
           >
             Start Your Proposal Today
           </button>

@@ -21,15 +21,6 @@ export default function PublicationSupport() {
         </div>
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white flex flex-col items-start text-left">
           <div className="max-w-4xl w-full flex flex-col items-start">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase"
-            >
-              <Award className="w-4 h-4 text-white" />
-              High Impact Results
-            </motion.div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
               Scopus & Web of Science <br />
               <span className="text-white">Publication Support</span>
@@ -124,7 +115,7 @@ export default function PublicationSupport() {
           <p className="text-white/70 text-base md:text-xl lg:text-2xl mb-12">Let our expert scholars help you get published in the world's most prestigious journals.</p>
           <button 
             onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-            className="bg-white text-brand-primary px-12 py-5 rounded-full font-bold text-xl hover:shadow-2xl transition-all"
+            className="bg-white text-brand-primary border-2 border-white hover:bg-transparent hover:text-white px-12 py-5 rounded-none font-bold text-xl shadow-lg transition-all duration-300"
           >
             Submit Your Manuscript
           </button>

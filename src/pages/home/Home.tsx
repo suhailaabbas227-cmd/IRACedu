@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { 
   CheckCircle2, Edit3, Search, Users, ShieldCheck, 
   MessageSquare, GraduationCap, BarChart3, Clock, Award, FileText
@@ -75,12 +76,8 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="w-full flex flex-col items-start py-2 mb-6"
             >
-              <p className="text-white/95 text-xs md:text-sm font-extrabold mb-4 tracking-widest uppercase">
-                International Standard Research & Consultancy Services
-              </p>
-              
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.15] mb-5 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
-                International Standard Work — <br />
+                International Standard Work <br />
                 <span className="text-white/95">At Your Doorstep</span>
               </h1>
 
@@ -110,7 +107,7 @@ export default function Home() {
             <div className="flex">
               <button 
                 onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-                className="bg-white text-brand-primary hover:text-white hover:bg-white/10 hover:border-white hover:backdrop-blur-md border border-transparent px-8 py-3.5 rounded-xl font-bold text-sm md:text-base transition-all duration-300 shadow-xl inline-block"
+                className="bg-white text-brand-primary hover:bg-transparent hover:text-white hover:backdrop-blur-md border-2 border-white px-8 py-3.5 rounded-none font-bold text-sm md:text-base transition-all duration-300 shadow-xl inline-block"
               >
                 Chat Now
               </button>
@@ -133,8 +130,8 @@ export default function Home() {
               className="relative min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=2070" 
-                alt="Expert academic advisor with student"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200" 
+                alt="Engr. Muhammad Ali Shaikh - Lead Academic Advisor"
                 className="absolute inset-0 w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -153,12 +150,12 @@ export default function Home() {
                   Insight Research & Academic Consultancy (IRAC)
                 </h2>
                 <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
-                  Led by Engr. Muhammad Ali Shaikh and a team of professional Ph.D. Scholars, we ensure your research & consultancy work is of international standard.
+                  Led by Engr. Muhammad Ali Shaikh, a distinguished Ph.D. scholar, and a team of experienced professionals. We are committed to delivering research and consultancy services that meet international standards.
                 </p>
                 <div className="pt-2">
                   <button 
                     onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-                    className="bg-brand-primary text-white px-10 py-3 rounded-md font-bold text-base transition-all hover:bg-brand-primary/90 shadow-lg inline-block"
+                    className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-10 py-3 rounded-none font-bold text-base transition-all duration-300 shadow-lg inline-block"
                   >
                     Chat Now
                   </button>
@@ -260,21 +257,21 @@ export default function Home() {
               className="flex flex-col justify-center py-8"
             >
               <div className="space-y-6">
-                  <div className="space-y-4 md:space-y-6 text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
+                <div className="space-y-4 md:space-y-6 text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
                   <p>
-                    At IRAC Services, we believe that academic excellence is reachable with the right guidance. Our team of Ph.D. scholars provides specialized consultancy for thesis guidance, proposal development, and complex data analysis.
+                    At IRAC Services, we provide expert research and consultancy support through thesis and dissertation guidance, proposal development, data analysis, instrument validation, publication assistance, and research training. Our team of Ph.D. scholars ensures research integrity, academic excellence, and internationally recognized standards in every project.
                   </p>
                   <p>
-                    Whether you are working on a dissertation or a high-impact journal article, we provide the tools and expertise to ensure your work meets the rigorous standards of Scopus and Web of Science publications.
+                    We guarantee absolute client-consultant confidentiality and intellectual privacy. We ensure that your work is original, your methodology is sound, and your analysis is highly accurate to help you successfully achieve professional publication results globally.
                   </p>
                 </div>
-                <div className="pt-4">
-                  <a 
-                    href="/contact"
-                    className="bg-brand-primary text-white px-10 py-3 rounded-md font-bold text-base transition-all hover:bg-brand-primary/90 shadow-md inline-block"
+                <div className="pt-6 flex">
+                  <Link 
+                    to="/contact"
+                    className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-8 py-3.5 rounded-none font-bold text-sm md:text-base transition-all duration-300 shadow-md inline-block text-center"
                   >
                     Get a Free Consultation
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -293,78 +290,6 @@ export default function Home() {
                 className="absolute inset-0 w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* Security Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
-            {/* Image Column */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-slate-100"
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1200" 
-                alt="Academic research and standards" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              {/* Floating Security Badge Overlay */}
-              <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-blue-100 flex items-center gap-3 z-10">
-                <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-md">
-                  <ShieldCheck className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <p className="text-[#162447] font-bold text-sm">Intellectual Privacy</p>
-                </div>
-              </div>
-              {/* Decorative background shape */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600/10 rounded-full -z-10 blur-2xl"></div>
-            </motion.div>
-
-            {/* Content Column */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="flex flex-col justify-center py-8"
-            >
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary leading-tight tracking-tight">
-                    International Research & Consultancy Standards
-                  </h2>
-                  <div className="w-20 h-1.5 bg-brand-primary rounded-full"></div>
-                </div>
-                
-                <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
-                  Research & Consultancy integrity is at the heart of IRAC. We ensure your work is original, methodology is sound, and analysis is accurate.
-                </p>
-                
-                <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
-                  Our consultancy respects your intellectual property and helps you achieve professional publication results globally.
-                </p>
-
-                <div className="pt-4">
-                  <button 
-                    onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-                    className="bg-brand-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-primary/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3 group max-w-fit"
-                  >
-                    <MessageSquare className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    Chat Now
-                  </button>
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageSquare, X, Send, Bot, User, Loader2, CheckCircle2 } from 'lucide-react';
+import { MessageSquare, X, Send, Bot, User, Loader2, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
 import ReactMarkdown from 'react-markdown';
 import { cn } from '../lib/utils';
@@ -65,6 +65,76 @@ export default function AIAssistant() {
   const [isLoading, setIsLoading] = useState(false);
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
   const [enquirySent, setEnquirySent] = useState(false);
+  const [enquiryName, setEnquiryName] = useState('');
+  const [enquiryEmail, setEnquiryEmail] = useState('');
+  const [enquiryMsg, setEnquiryMsg] = useState('');
+  const [enquiryLoading, setEnquiryLoading] = useState(false);
+  const [enquiryError, setEnquiryError] = useState<string | null>(null);
+  const [isSimulated, setIsSimulated] = useState(false);
+
+  const web3FormsKey = (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY;
+
+  const handleEnquirySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!enquiryName || !enquiryEmail || !enquiryMsg) {
+      setEnquiryError('Please fill in all fields.');
+      return;
+    }
+
+    setEnquiryError(null);
+    setEnquiryLoading(true);
+
+    if (!web3FormsKey) {
+      setTimeout(() => {
+        setEnquiryLoading(false);
+        setEnquirySent(true);
+        setIsSimulated(true);
+      }, 800);
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: web3FormsKey,
+          name: enquiryName,
+          email: enquiryEmail,
+          subject: 'New Chatbot Lead/Enquiry',
+          message: enquiryMsg,
+          from_name: 'IRAC Website Chatbot',
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setEnquirySent(true);
+        setIsSimulated(false);
+        setEnquiryName('');
+        setEnquiryEmail('');
+        setEnquiryMsg('');
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (err: any) {
+      console.error(err);
+      setEnquiryError(err.message || 'Could not send. Check connection.');
+    } finally {
+      setEnquiryLoading(false);
+    }
+  };
+
+  const handleEnquiryMailtoFallback = () => {
+    const formattedSubject = encodeURIComponent('Inquiry from IRAC Website Chatbot');
+    const bodyText = encodeURIComponent(`Name: ${enquiryName}\nEmail: ${enquiryEmail}\n\nMessage:\n${enquiryMsg}`);
+    window.location.href = `mailto:info@iracedu.com?subject=${formattedSubject}&body=${bodyText}`;
+  };
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -156,49 +226,113 @@ export default function AIAssistant() {
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-full flex flex-col justify-center"
+                  className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 min-h-full flex flex-col justify-center overflow-y-auto"
                 >
                   {enquirySent ? (
-                    <div className="text-center space-y-4">
-                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto text-green-600">
-                        <CheckCircle2 className="w-8 h-8" />
+                    <div className="text-center space-y-3 py-4">
+                      <div className="w-12 h-12 bg-green-50 text-green-500 border border-green-100 rounded-full flex items-center justify-center mx-auto shadow-sm">
+                        <CheckCircle2 className="w-6 h-6" />
                       </div>
-                      <h4 className="font-bold text-slate-900">Message Sent!</h4>
-                      <p className="text-slate-500 text-sm">
-                        Thank you for reaching out. Our team will review your enquiry and get back to you shortly.
+                      <h4 className="font-bold text-slate-900 text-sm">Message Sent!</h4>
+                      <p className="text-slate-500 text-xs px-2 leading-relaxed">
+                        Thank you for reaching out. Our consultancy team will review your message and reply back within 24 hours.
                       </p>
+
+                      {isSimulated && (
+                        <div className="bg-amber-50 border border-amber-200 p-3 rounded-lg text-left text-xs text-amber-800 space-y-2 mt-2">
+                          <p className="font-semibold flex items-center gap-1.5">
+                            <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
+                            Admin Note: Configure Inbox
+                          </p>
+                          <p className="text-[11px] text-amber-700 leading-normal">
+                            To send form messages directly to <strong className="text-brand-primary">info@iracedu.com</strong>, add a free Web3Forms license key as <code className="bg-amber-100 px-1 py-0.5 rounded font-mono text-[10px]">VITE_WEB3FORMS_ACCESS_KEY</code> in project Settings.
+                          </p>
+                          <button 
+                            onClick={handleEnquiryMailtoFallback}
+                            className="w-full bg-brand-primary text-white text-[11px] py-1.5 font-bold transition-all hover:bg-brand-primary/95"
+                          >
+                            Send via Mail App Manually
+                          </button>
+                        </div>
+                      )}
+
                       <button 
                         onClick={() => {
                           setShowEnquiryForm(false);
                           setEnquirySent(false);
+                          setEnquiryName('');
+                          setEnquiryEmail('');
+                          setEnquiryMsg('');
                         }}
-                        className="text-brand-primary font-bold text-sm hover:underline"
+                        className="text-brand-primary font-bold text-xs hover:underline pt-2 block mx-auto"
                       >
-                        Back to Chat
+                        Back to Chat Help
                       </button>
                     </div>
                   ) : (
-                    <div className="space-y-4">
-                      <h4 className="font-bold text-brand-primary">Talk to a Human</h4>
-                      <p className="text-xs text-slate-500">Leaving a message will notify our consultancy team. They will reply to your email.</p>
-                      <div className="space-y-3">
-                        <input type="text" placeholder="Your Name" className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-brand-primary/20" />
-                        <input type="email" placeholder="Your Email" className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-brand-primary/20" />
-                        <textarea placeholder="How can we help?" rows={4} className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-brand-primary/20 resize-none"></textarea>
+                    <form onSubmit={handleEnquirySubmit} className="space-y-3 py-2">
+                      <h4 className="font-bold text-brand-primary text-sm">Talk to a Human</h4>
+                      <p className="text-[11px] text-slate-500 leading-normal">Leaving a message will notify our consultancy team. They will reply to your email directly.</p>
+                      
+                      {enquiryError && (
+                        <div className="bg-red-50 border border-red-100 text-red-700 p-2 rounded text-[11px] font-medium leading-normal">
+                          {enquiryError}
+                        </div>
+                      )}
+
+                      <div className="space-y-2">
+                        <input 
+                          type="text" 
+                          required
+                          value={enquiryName}
+                          onChange={(e) => setEnquiryName(e.target.value)}
+                          placeholder="Your Name" 
+                          className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-none text-xs outline-none focus:ring-2 focus:ring-brand-primary/20" 
+                        />
+                        <input 
+                          type="email" 
+                          required
+                          value={enquiryEmail}
+                          onChange={(e) => setEnquiryEmail(e.target.value)}
+                          placeholder="Your Email" 
+                          className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-none text-xs outline-none focus:ring-2 focus:ring-brand-primary/20" 
+                        />
+                        <textarea 
+                          required
+                          value={enquiryMsg}
+                          onChange={(e) => setEnquiryMsg(e.target.value)}
+                          placeholder="How can we help?" 
+                          rows={3} 
+                          className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-none text-xs outline-none focus:ring-2 focus:ring-brand-primary/20 resize-none"
+                        ></textarea>
+                        
                         <button 
-                          onClick={() => setEnquirySent(true)}
-                          className="w-full bg-brand-primary text-white py-2.5 rounded-lg font-bold text-sm shadow-md hover:bg-brand-primary/90 transition-colors"
+                          type="submit"
+                          disabled={enquiryLoading}
+                          className="w-full bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary py-2 rounded-none font-bold text-xs shadow transition-all duration-300 flex items-center justify-center gap-1.5 disabled:opacity-50"
                         >
-                          Send Message
+                          {enquiryLoading ? (
+                            <>
+                              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                              Sending...
+                            </>
+                          ) : (
+                            'Send Message'
+                          )}
                         </button>
+                        
                         <button 
-                          onClick={() => setShowEnquiryForm(false)}
-                          className="w-full text-slate-400 font-medium text-xs hover:text-slate-600 transition-colors"
+                          type="button"
+                          onClick={() => {
+                            setShowEnquiryForm(false);
+                            setEnquiryError(null);
+                          }}
+                          className="w-full text-slate-400 font-medium text-[11px] hover:text-slate-600 transition-colors py-0.5 text-center"
                         >
-                          Cancel
+                          Cancel / Back to Chat
                         </button>
                       </div>
-                    </div>
+                    </form>
                   )}
                 </motion.div>
               ) : (
@@ -255,7 +389,7 @@ export default function AIAssistant() {
                     <div className="flex justify-center pt-4">
                       <button 
                         onClick={() => setShowEnquiryForm(true)}
-                        className="text-[11px] font-bold text-brand-primary bg-brand-primary/5 px-4 py-2 rounded-full border border-brand-primary/10 hover:bg-brand-primary/10 transition-colors"
+                        className="text-[11px] font-bold text-brand-primary bg-brand-primary/5 px-4 py-2 rounded-none border border-brand-primary/10 hover:bg-brand-primary/10 transition-colors"
                       >
                         Talk to a Human instead?
                       </button>
@@ -280,12 +414,12 @@ export default function AIAssistant() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Type your question..."
-                  className="w-full pl-4 pr-12 py-3 bg-slate-100 border-none rounded-xl focus:ring-2 focus:ring-brand-primary/20 text-sm outline-none"
+                  className="w-full pl-4 pr-12 py-3 bg-slate-100 border border-slate-200 rounded-none focus:ring-2 focus:ring-brand-primary/20 text-sm outline-none"
                 />
                 <button
                   type="submit"
                   disabled={!input.trim() || isLoading}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-brand-primary text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-brand-primary/90 transition-colors shadow-md"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-brand-primary text-white rounded-none disabled:opacity-50 disabled:cursor-not-allowed hover:bg-brand-primary/90 transition-colors shadow-md"
                 >
                   <Send className="w-4 h-4" />
                 </button>

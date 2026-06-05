@@ -90,7 +90,7 @@ export default function Navbar() {
             
             <button 
               onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-              className="bg-brand-primary text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-md text-[11px] lg:text-xs font-bold hover:bg-brand-primary/90 transition-colors whitespace-nowrap inline-block"
+              className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-4 lg:px-6 py-1.5 lg:py-2 rounded-none text-[11px] lg:text-xs font-bold transition-all duration-300 whitespace-nowrap inline-block"
             >
               Chat Now
             </button>
@@ -159,7 +159,7 @@ export default function Navbar() {
                 setIsOpen(false);
                 window.dispatchEvent(new CustomEvent('open-ai-chat'));
               }}
-              className="w-full bg-brand-primary text-white py-4 rounded-xl text-base font-bold hover:bg-brand-primary/90 transition-colors inline-block text-center"
+              className="w-full bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary py-4 rounded-none text-base font-bold transition-all duration-300 inline-block text-center"
             >
               Chat Now
             </button>
