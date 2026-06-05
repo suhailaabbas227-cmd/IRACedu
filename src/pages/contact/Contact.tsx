@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
-import { Phone, Mail, MapPin, Loader2, CheckCircle, AlertTriangle } from 'lucide-react';
+import { Phone, Mail, MapPin, Loader2, CheckCircle } from 'lucide-react';
 
 export default function Contact() {
   const [fullName, setFullName] = useState('');
@@ -10,10 +10,12 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [isSimulated, setIsSimulated] = useState(false);
 
-  // Read Web3Forms access key from Vite environment
-  const web3FormsKey = (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY;
+  // Destination inbox for contact form submissions. FormSubmit delivers
+  // every submission straight to this address — no API key or account needed.
+  // The first submission triggers a one-time confirmation email from
+  // FormSubmit; click the activation link in it to start receiving messages.
+  const CONTACT_INBOX = 'info@iracedu.com';
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -25,38 +27,28 @@ export default function Contact() {
     setError(null);
     setLoading(true);
 
-    if (!web3FormsKey) {
-      // If Web3Forms key is not configured, we simulate success but offer alternative action
-      setTimeout(() => {
-        setLoading(false);
-        setSuccess(true);
-        setIsSimulated(true);
-      }, 800);
-      return;
-    }
-
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_INBOX}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          access_key: web3FormsKey,
           name: fullName,
           email: email,
-          subject: subject,
+          _subject: `IRAC Website: ${subject}`,
           message: message,
-          from_name: 'IRAC Services Website',
+          _template: 'table',
+          _captcha: 'false',
         }),
       });
 
       const result = await response.json();
 
-      if (result.success) {
+      // FormSubmit returns { success: "true" | true, message: string }
+      if (response.ok && (result.success === true || result.success === 'true')) {
         setSuccess(true);
-        setIsSimulated(false);
         // Clear form
         setFullName('');
         setEmail('');
@@ -71,12 +63,6 @@ export default function Contact() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleMailtoFallback = () => {
-    const formattedSubject = encodeURIComponent(subject || 'Inquiry from IRAC Website');
-    const bodyText = encodeURIComponent(`Name: ${fullName}\nEmail: ${email}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:info@iracedu.com?subject=${formattedSubject}&body=${bodyText}`;
   };
 
   return (
@@ -161,35 +147,7 @@ export default function Contact() {
                   </p>
                 </div>
 
-                {isSimulated && (
-                  <div className="bg-amber-50 border border-amber-200 p-6 rounded-2xl text-left max-w-md mx-auto space-y-3">
-                    <div className="flex gap-2 items-center text-amber-800 font-bold text-sm">
-                      <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0" />
-                      Inbox Config Guide (Admin only)
-                    </div>
-                    <p className="text-xs text-amber-700 leading-relaxed">
-                      To receive this email directly in your professional inbox (<strong className="text-brand-primary">info@iracedu.com</strong>), set your free Web3Forms license key as <code className="bg-amber-100 px-1 py-0.5 rounded text-[11px] font-mono font-bold">VITE_WEB3FORMS_ACCESS_KEY</code> in your Project Settings.
-                    </p>
-                    <div className="flex gap-2 pt-1">
-                      <button 
-                        onClick={handleMailtoFallback}
-                        className="bg-brand-primary text-white text-xs px-3.5 py-2 font-bold transition-all hover:bg-brand-primary/90 rounded"
-                      >
-                        Send via Email client manually
-                      </button>
-                      <a 
-                        href="https://web3forms.com/" 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 text-xs px-3.5 py-2 font-bold transition-all rounded inline-block text-center"
-                      >
-                        Get Free Key
-                      </a>
-                    </div>
-                  </div>
-                )}
-
-                <button 
+                <button
                   onClick={() => {
                     setSuccess(false);
                     setFullName('');
