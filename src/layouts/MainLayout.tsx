@@ -38,9 +38,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
               <p className="text-slate-400 text-base leading-relaxed">
                 C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500
               </p>
-              <p className="text-slate-500 text-sm mt-3 italic">
-                Our own dedicated office for over 25 years.
-              </p>
             </div>
           </div>
           <div className="text-center text-slate-500 text-sm">

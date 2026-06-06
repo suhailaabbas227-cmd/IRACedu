@@ -117,7 +117,6 @@ export default function Contact() {
                   <MapPin className="w-8 h-8 text-brand-primary mb-4" />
                   <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Office Address</h3>
                   <p className="text-slate-600 text-base whitespace-pre-line leading-relaxed">C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500</p>
-                  <p className="text-slate-500 text-sm mt-2 italic">Our own dedicated office for over 25 years.</p>
                 </div>
 
               </div>

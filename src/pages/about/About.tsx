@@ -43,7 +43,7 @@ export default function About() {
             <div className="lg:w-1/2 space-y-8">
               <div className="space-y-6 text-slate-700 text-base md:text-lg">
                 <p className="leading-relaxed font-medium text-slate-800">
-                  IRAC delivers high-impact academic solutions and advanced data analysis tailored to international standards. We help scholars, researchers, and students overcome tight deadlines and research stress to achieve professional-grade results.
+                  For over 25 years, IRAC has operated from its own dedicated office, delivering high-impact academic solutions and advanced data analysis tailored to international standards. We help scholars, researchers, and students overcome tight deadlines and research stress to achieve professional-grade results.
                 </p>
                 <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm space-y-4">
                   <h3 className="text-xl font-bold text-brand-primary">What We Do</h3>
