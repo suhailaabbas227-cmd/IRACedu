@@ -68,10 +68,10 @@ export default function About() {
               </div>
               <div className="flex">
                 <button 
-                  onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+                  onClick={() => { window.location.hash = '#/contact'; }}
                   className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-10 py-4 rounded-none font-bold text-lg transition-all duration-300 shadow-lg inline-block"
                 >
-                  Chat Now
+                  Contact Us
                 </button>
               </div>
             </div>

@@ -112,7 +112,7 @@ export default function ThesisGuidance() {
             Connect with our Ph.D. scholars today for a personalized thesis guidance plan.
           </p>
           <button 
-            onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+            onClick={() => window.location.hash = '#/contact'}
             className="bg-white text-brand-primary border-2 border-white hover:bg-transparent hover:text-white px-8 md:px-12 py-4 md:py-5 rounded-none font-bold text-base md:text-xl transition-all duration-300 shadow-2xl"
           >
             Check Availability

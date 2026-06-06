@@ -106,10 +106,10 @@ export default function Home() {
 
             <div className="flex">
               <button 
-                onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+                onClick={() => window.location.hash = '#/contact'}
                 className="bg-white text-brand-primary hover:bg-transparent hover:text-white hover:backdrop-blur-md border-2 border-white px-8 py-3.5 rounded-none font-bold text-sm md:text-base transition-all duration-300 shadow-xl inline-block"
               >
-                Chat Now
+                Contact Us
               </button>
             </div>
 
@@ -154,10 +154,10 @@ export default function Home() {
                 </p>
                 <div className="pt-2">
                   <button 
-                    onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+                    onClick={() => window.location.hash = '#/contact'}
                     className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-10 py-3 rounded-none font-bold text-base transition-all duration-300 shadow-lg inline-block"
                   >
-                    Chat Now
+                    Contact Us
                   </button>
                 </div>
               </div>

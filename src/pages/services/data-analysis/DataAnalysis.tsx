@@ -114,7 +114,7 @@ export default function DataAnalysis() {
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Complex Data? <br /> No Problem.</h2>
           <p className="text-slate-400 text-base md:text-lg mb-10">We handle the numbers so you can focus on the research & consultancy implications.</p>
           <button 
-            onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+            onClick={() => window.location.hash = '#/contact'}
             className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-white px-12 py-4 rounded-none font-bold transition-all duration-300 shadow-lg"
           >
             Get a Quote for Analysis

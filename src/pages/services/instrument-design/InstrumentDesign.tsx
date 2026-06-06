@@ -107,7 +107,7 @@ export default function InstrumentDesign() {
             <p className="text-base md:text-xl font-bold opacity-80 uppercase tracking-tighter">Get a professionally designed research or consultancy instrument today.</p>
           </div>
           <button 
-            onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+            onClick={() => window.location.hash = '#/contact'}
             className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-8 py-4 rounded-none font-bold transition-all duration-300 shadow-lg"
           >
             Consult Our Experts

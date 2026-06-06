@@ -123,13 +123,13 @@ export default function ResearchWorkshops() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button 
-              onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+              onClick={() => window.location.hash = '#/contact'}
               className="bg-white text-brand-primary border-2 border-white hover:bg-transparent hover:text-white px-10 py-4 rounded-none font-bold transition-all duration-300"
             >
               Upcoming Schedule
             </button>
             <button 
-              onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+              onClick={() => window.location.hash = '#/contact'}
               className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-none font-bold hover:bg-white hover:text-brand-primary transition-all duration-300"
             >
               Custom Workshop Request

@@ -114,7 +114,7 @@ export default function PublicationSupport() {
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-8">Achieve Global Visibility</h2>
           <p className="text-white/70 text-base md:text-xl lg:text-2xl mb-12">Let our expert scholars help you get published in the world's most prestigious journals.</p>
           <button 
-            onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+            onClick={() => window.location.hash = '#/contact'}
             className="bg-white text-brand-primary border-2 border-white hover:bg-transparent hover:text-white px-12 py-5 rounded-none font-bold text-xl shadow-lg transition-all duration-300"
           >
             Submit Your Manuscript

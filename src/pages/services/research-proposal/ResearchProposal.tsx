@@ -123,7 +123,7 @@ export default function ResearchProposal() {
         <div className="max-w-3xl mx-auto px-6">
           <h3 className="text-3xl md:text-5xl font-bold text-brand-primary mb-8">Need Help with Your Proposal?</h3>
           <button 
-            onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+            onClick={() => window.location.hash = '#/contact'}
             className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-10 py-4 rounded-none font-bold text-lg transition-all duration-300 shadow-xl"
           >
             Start Your Proposal Today

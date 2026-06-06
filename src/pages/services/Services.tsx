@@ -145,7 +145,7 @@ export default function Services() {
               Book a free consultation with our PhD consultancy team to discuss your specific research needs.
             </p>
             <button 
-              onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+              onClick={() => window.location.hash = '#/contact'}
               className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-8 md:px-12 py-4 md:py-5 rounded-none font-bold text-base md:text-xl shadow-xl transition-all duration-300"
             >
               Get Free Consultation

@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import AIAssistant from '../components/AIAssistant';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -13,7 +12,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
       <main className="flex-grow pt-16">
         {children}
       </main>
-      <AIAssistant />
       <footer className="bg-slate-900 text-white py-12">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12 border-b border-white/10 pb-12">

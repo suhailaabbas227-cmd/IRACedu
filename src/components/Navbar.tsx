@@ -89,10 +89,10 @@ export default function Navbar() {
             </div>
             
             <button 
-              onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+              onClick={() => window.location.hash = '#/contact'}
               className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-4 lg:px-6 py-1.5 lg:py-2 rounded-none text-[11px] lg:text-xs font-bold transition-all duration-300 whitespace-nowrap inline-block"
             >
-              Chat Now
+              Contact Us
             </button>
 
             {/* Mobile Menu Button */}
@@ -157,11 +157,11 @@ export default function Navbar() {
             <button 
               onClick={() => {
                 setIsOpen(false);
-                window.dispatchEvent(new CustomEvent('open-ai-chat'));
+                window.location.hash = '#/contact';
               }}
               className="w-full bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary py-4 rounded-none text-base font-bold transition-all duration-300 inline-block text-center"
             >
-              Chat Now
+              Contact Us
             </button>
           </div>
         </div>
