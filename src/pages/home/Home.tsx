@@ -104,15 +104,6 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="flex">
-              <button 
-                onClick={() => window.location.hash = '#/contact'}
-                className="bg-white text-brand-primary hover:bg-transparent hover:text-white hover:backdrop-blur-md border-2 border-white px-8 py-3.5 rounded-none font-bold text-sm md:text-base transition-all duration-300 shadow-xl inline-block"
-              >
-                Contact Us
-              </button>
-            </div>
-
           </div>
         </div>
       </section>
@@ -152,14 +143,6 @@ export default function Home() {
                 <p className="text-slate-600 text-base md:text-lg lg:text-xl leading-relaxed">
                   Led by Engr. Muhammad Ali Shaikh, a distinguished Ph.D. scholar, and a team of experienced professionals. We are committed to delivering research and consultancy services that meet international standards.
                 </p>
-                <div className="pt-2">
-                  <button 
-                    onClick={() => window.location.hash = '#/contact'}
-                    className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-10 py-3 rounded-none font-bold text-base transition-all duration-300 shadow-lg inline-block"
-                  >
-                    Contact Us
-                  </button>
-                </div>
               </div>
             </motion.div>
           </div>

@@ -66,16 +66,8 @@ export default function About() {
                   Our team, led by Engr. Muhammad Ali Shaikh, is dedicated to turning complex data into seamless, publishable scholarly success.
                 </p>
               </div>
-              <div className="flex">
-                <button 
-                  onClick={() => { window.location.hash = '#/contact'; }}
-                  className="bg-brand-primary text-white border-2 border-brand-primary hover:bg-transparent hover:text-brand-primary px-10 py-4 rounded-none font-bold text-lg transition-all duration-300 shadow-lg inline-block"
-                >
-                  Contact Us
-                </button>
-              </div>
             </div>
-            
+
             <div className="lg:w-1/2">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
