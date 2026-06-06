@@ -26,8 +26,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <div>
               <h3 className="text-xl md:text-2xl font-bold mb-4 uppercase tracking-wider text-white">Contact Info</h3>
               <ul className="space-y-3 text-slate-400 text-base">
-                <li>+92 321 9242692 | +92 330 2854671</li>
-                <li>+92 21 35899913 (Fax)</li>
+                <li>Tel: +92 21 35899912</li>
+                <li>Mobile: +92 321 9242692, +92 330 2854671</li>
+                <li>Fax: +92 21 35899913</li>
                 <li>info@iracedu.com</li>
                 <li>www.iracedu.com</li>
               </ul>
@@ -35,7 +36,10 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <div>
               <h3 className="text-xl md:text-2xl font-bold mb-4 uppercase tracking-wider text-white">Address</h3>
               <p className="text-slate-400 text-base leading-relaxed">
-                C-2C, Khayaban-E-Ittehad, Phase VII, DHA, Karachi, 75500
+                C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500
+              </p>
+              <p className="text-slate-500 text-sm mt-3 italic">
+                Our own dedicated office for over 25 years.
               </p>
             </div>
           </div>

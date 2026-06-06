@@ -102,9 +102,10 @@ export default function Contact() {
                   <Phone className="w-8 h-8 text-brand-primary mb-4" />
                   <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Phone & Fax</h3>
                   <p className="text-slate-600 text-base whitespace-pre-line leading-relaxed">
-                    +92 321 9242692
-                    +92 330 2854671
-                    +92 21 35899913 (Fax)
+                    Tel: +92 21 35899912
+                    Mobile: +92 321 9242692
+                    Mobile: +92 330 2854671
+                    Fax: +92 21 35899913
                   </p>
                 </div>
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
@@ -115,7 +116,8 @@ export default function Contact() {
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                   <MapPin className="w-8 h-8 text-brand-primary mb-4" />
                   <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Office Address</h3>
-                  <p className="text-slate-600 text-base whitespace-pre-line leading-relaxed">C-2C, Khayaban-E-Ittehad, Phase VII, DHA, Karachi, 75500</p>
+                  <p className="text-slate-600 text-base whitespace-pre-line leading-relaxed">C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500</p>
+                  <p className="text-slate-500 text-sm mt-2 italic">Our own dedicated office for over 25 years.</p>
                 </div>
 
               </div>
