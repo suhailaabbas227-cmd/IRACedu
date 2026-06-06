@@ -101,12 +101,11 @@ export default function Contact() {
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                   <Phone className="w-8 h-8 text-brand-primary mb-4" />
                   <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Phone & Fax</h3>
-                  <p className="text-slate-600 text-base whitespace-pre-line leading-relaxed">
-                    Tel: +92 21 35899912
-                    Mobile: +92 321 9242692
-                    Mobile: +92 330 2854671
-                    Fax: +92 21 35899913
-                  </p>
+                  <div className="text-slate-600 text-base leading-relaxed space-y-1">
+                    <p><span className="font-semibold text-slate-700">Tel:</span> +92 21 35899912</p>
+                    <p><span className="font-semibold text-slate-700">Mobile:</span> +92 321 9242692, +92 330 2854671</p>
+                    <p><span className="font-semibold text-slate-700">Fax:</span> +92 21 35899913</p>
+                  </div>
                 </div>
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                   <Mail className="w-8 h-8 text-brand-primary mb-4" />
