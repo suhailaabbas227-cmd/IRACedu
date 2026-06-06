@@ -112,10 +112,10 @@ export default function Contact() {
                   <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Email</h3>
                   <p className="text-slate-600 text-base">info@iracedu.com</p>
                 </div>
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 md:col-span-2">
                   <MapPin className="w-8 h-8 text-brand-primary mb-4" />
                   <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Office Address</h3>
-                  <p className="text-slate-600 text-base whitespace-pre-line leading-relaxed">C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500</p>
+                  <p className="text-slate-600 text-base leading-relaxed">C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500</p>
                 </div>
 
               </div>
