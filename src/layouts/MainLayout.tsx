@@ -36,7 +36,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <div>
               <h3 className="text-xl md:text-2xl font-bold mb-4 uppercase tracking-wider text-white">Address</h3>
               <p className="text-slate-400 text-base leading-relaxed">
-                C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500
+                Building # C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500
               </p>
             </div>
           </div>

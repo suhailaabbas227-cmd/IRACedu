@@ -40,7 +40,7 @@ Contact Information:
 - Fax: +92 21 35899913
 - Email: info@iracedu.com
 - Website: www.iracedu.com
-- Address: C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500
+- Address: Building # C-2C, Third Floor (Corner), Saadi Lane No. 1, Khayaban-e-Ittehad, Phase VII, DHA, Karachi 75500
 - IRAC operates from its own dedicated office, established over 25 years ago.
 
 Tone:
